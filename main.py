@@ -87,6 +87,7 @@ async def roulette_survivor(interaction: discord.Interaction):
         await interaction.followup.send("[ERROR] サバイバーの選択肢が登録されていません！")
         return
 
+    random.shuffle(items)  # アイテムの順番をランダムにシャッフル
     chosen_item = random.choice(items)
     item_name, item_role = chosen_item
 
@@ -94,7 +95,7 @@ async def roulette_survivor(interaction: discord.Interaction):
     embed.add_field(name="名前", value=f"**{item_name}**", inline=False)
     embed.add_field(name="役職", value=item_role, inline=False)
 
-    await interaction.followup.send(embed=embed)
+    await interaction.followup.send(embed=embed,ephemeral=True)
 
 # --- ルーレットコマンド（ハンター専用） ---
 @client.tree.command(name="random-hunter", description="ハンターからランダムに1つ選びます！")
@@ -118,6 +119,7 @@ async def roulette_hunter(interaction: discord.Interaction):
         await interaction.followup.send("[ERROR] ハンターの選択肢が登録されていません！")
         return
 
+    random.shuffle(items)  # アイテムの順番をランダムにシャッフル
     chosen_item = random.choice(items)
     item_name, item_role = chosen_item
 
