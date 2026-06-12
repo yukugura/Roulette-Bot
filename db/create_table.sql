@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS roulette_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(64) NOT NULL,
+    `role` VARCHAR(32) NOT NULL,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+);
