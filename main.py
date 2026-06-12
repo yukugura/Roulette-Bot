@@ -92,7 +92,7 @@ async def roulette_survivor(interaction: discord.Interaction):
     item_name, item_role = chosen_item
 
     embed = discord.Embed(title="ルーレット結果 (サバイバー)", color=discord.Color.blue())
-    embed.add_field(name="名前", value=f"**{item_name}**", inline=False)
+    embed.add_field(name="", value=f"名前：**{item_name}**", inline=False)
     #embed.add_field(name="役職", value=item_role, inline=False)
 
     await interaction.followup.send(embed=embed,ephemeral=True)
@@ -124,7 +124,7 @@ async def roulette_hunter(interaction: discord.Interaction):
     item_name, item_role = chosen_item
 
     embed = discord.Embed(title="ルーレット結果 (ハンター)", color=discord.Color.red())
-    embed.add_field(name="名前", value=f"**{item_name}**", inline=False)
+    embed.add_field(name="", value=f"名前：**{item_name}**", inline=False)
     #embed.add_field(name="役職", value=item_role, inline=False)
 
     await interaction.followup.send(embed=embed)
